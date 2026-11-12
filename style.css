@@ -655,3 +655,37 @@ textarea.code{width:100%;height:110px;border:3px solid var(--ink);border-radius:
 #sheet .sh{will-change:transform}
 .toast.rp{animation:tpop .25s ease-out}@keyframes tpop{50%{transform:scale(1.06)}}
 @media (hover:none){button{-webkit-tap-highlight-color:transparent}button:active{transition-duration:.05s}}
+
+/* ===== V22 : mobile (encoche, or, étage, boss), Souvenirs, réglages ===== */
+#app{padding-top:env(safe-area-inset-top,0px);box-sizing:border-box}
+#stage{flex-basis:43%;min-height:260px}
+@media (max-height:700px){#stage{flex-basis:40%;min-height:230px}}
+#hud{flex-direction:column;align-items:stretch;gap:5px;padding-top:7px}
+#hud .l{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+#hud .l b{font-size:18px;display:inline-block;max-width:100%}
+#hud .r{flex-direction:row;align-items:center;justify-content:flex-start;gap:6px}
+.pill{min-width:0;padding:2px 11px 2px 3px;font-size:16px;background:rgba(14,12,32,.88);border:2px solid var(--ink)}
+#igold+#gold,#hud #gold{color:var(--gold)}
+#tbar{top:84px}
+#goalb{top:84px;left:auto;right:max(10px,env(safe-area-inset-right,0px))}
+#wx{top:auto;bottom:40px;right:auto;left:max(10px,env(safe-area-inset-left,0px))}
+#bossin{top:30%;width:94%}
+#bossin b{font-size:34px}
+#bossin.go{animation-duration:3.4s}
+#banner{top:34%}
+#banner.boss,#banner.titan{top:56%;animation-duration:3.2s}
+#region{top:30%}
+#sortsay{top:40%}
+
+/* paupières : fermeture totale (plus de coins visibles), puis ouverture */
+#sleepv.go{animation:sbg 3.6s linear forwards}@keyframes sbg{0%,47%{background:rgba(5,4,10,0)}51%,72%{background:#05040a}100%{background:rgba(5,4,10,0)}}
+#sleepv.go .lid{animation:lid2 3.6s cubic-bezier(.6,0,.3,1) forwards}
+@keyframes lid2{0%{transform:translateY(var(--y,-100%))}35%{transform:translateY(calc(var(--y,-100%) * .55))}45%{transform:translateY(calc(var(--y,-100%) * .7))}50%,72%{transform:none}100%{transform:translateY(var(--y,-100%))}}
+#eyes{background:#05040c}#eyes.go{animation:ebg 3.1s linear forwards}@keyframes ebg{0%,42%{background:#05040c}56%,100%{background:rgba(5,4,12,0)}}
+/* Souvenirs : vente auto en une icône */
+.sellic{position:relative;width:34px;height:34px;border-radius:10px;border:2.5px solid var(--ink);background:#e8e2ff;color:#4a3f9a;display:grid;place-items:center;cursor:pointer;margin-left:auto}
+.sellic.on{background:#ffe9a6;color:#7a4a00}.sellic i{position:absolute;right:-4px;top:-4px;width:12px;height:12px;border-radius:50%;border:2px solid var(--ink)}
+.tog.lk{opacity:.6}.sellm{display:flex;flex-direction:column;gap:7px;margin-top:8px}.sellm .btn{display:flex;align-items:center;justify-content:center;gap:8px}.sd{width:12px;height:12px;border-radius:50%;border:2px solid var(--ink);display:inline-block}
+.perso{align-self:stretch;margin-top:6px}.perso small{display:block;font-weight:600;opacity:.75}
+/* réglages : tous les titres de section identiques */
+#view h4.rh{font-family:var(--t);font-weight:400;font-size:15px;margin:10px 0 0;color:var(--ink)}
