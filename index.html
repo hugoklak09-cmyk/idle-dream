@@ -1,0 +1,36 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#1b1836"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Idle Dream">
+<link rel="stylesheet" href="lf/f.css"></head><body><title>Idle Dream</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Germania+One&family=Grenze+Gotisch:wght@800;900&family=Rubik:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<div id="app" class="ti">
+  <div id="stage">
+    <div id="gl"></div><div id="tint"></div><div id="lines" hidden></div><div id="bars"></div><div id="nums"></div>
+    <div id="hud"><div class="l"><b id="stg"></b><span id="pips"></span></div><div class="r"><span class="pill"><i id="igold"></i><b id="gold">0</b></span><span class="pill"><i id="iham"></i><b id="ham">0</b></span><span class="pill"><i id="ipie"></i><b id="pie">0</b></span></div></div>
+    <div id="tbar" hidden><b></b><span><i></i></span></div>
+    <div id="banner" hidden></div><div id="ultfx" hidden></div>
+    <div id="hp" aria-label="Vie du Dormeur"><i></i><b></b></div>
+    <div id="skills"><button id="k1" class="k"></button><button id="k2" class="k"></button><button id="ku" class="k ult"></button></div>
+  </div>
+  <div id="panel"><div id="sub" hidden></div><div id="view"></div></div>
+  <nav id="nav" aria-label="Sections du jeu"></nav>
+  <div id="toasts" aria-live="polite"></div>
+  <div id="sheet" hidden></div>
+  <div id="draw" hidden></div>
+  <button id="title" aria-label="Idle Dream. Touche pour commencer.">
+    <span class="sky"></span>
+    <svg class="runes" viewBox="0 0 400 400" aria-hidden="true"><g fill="none" stroke="#8c6bff" stroke-width="2.500"><circle cx="200" cy="200" r="190"/><circle cx="200" cy="200" r="160" stroke="#ffd76a" stroke-dasharray="4 12"/><circle cx="200" cy="200" r="110"/><path d="M200 40l138.600 240H61.400zM200 360L61.400 120h277.200z"/></g><g fill="#ffd76a"><path d="M200 16l7 12-7 12-7-12z"/><path d="M200 360l7 12-7 12-7-12z"/><path d="M16 200l12-7 12 7-12 7z"/><path d="M360 200l12-7 12 7-12 7z"/></g></svg>
+    <svg class="mon m1" viewBox="0 0 400 460" aria-hidden="true"><path d="M0 460V350c36-40 84-62 122-72-6-78 24-158 78-190 54 32 84 112 78 190 38 10 86 32 122 72v110z"/><path d="M96 300c-30-20-50-52-56-90 20 26 44 42 70 50zM304 300c30-20 50-52 56-90-20 26-44 42-70 50zM150 140c-14-22-18-46-12-70 8 20 22 34 38 44zM250 140c14-22 18-46 12-70-8 20-22 34-38 44z"/><g class="eye"><path d="M152 198l40 14-36 8c-6-6-8-14-4-22z"/><path d="M248 198l-40 14 36 8c6-6 8-14 4-22z"/></g></svg>
+    <span class="mist a"></span><span class="mist b"></span>
+    <span class="ttl"><i>Idle</i><b>Dream</b></span>
+    <span class="tap">Touche pour t'endormir</span>
+    <span class="sub">Le Sort t'attend.</span>
+  </button>
+  <div id="loading" role="status" aria-live="polite"><svg class="lrune" viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><circle class="r1" cx="100" cy="100" r="86"/><circle class="r2" cx="100" cy="100" r="70"/><path class="r3" d="M100 22L168 140H32z"/><path class="r4" d="M100 58v84M72 92h56M80 124l20-30 20 30"/><circle class="r5" cx="100" cy="100" r="8"/></g></svg><b class="lt">Le Sort s'éveille</b><span class="lbar"><i></i></span><p id="ltip">Astuce du Sort : ton héros combat même quand le jeu est fermé.</p></div>
+<script>(function(){var T=["Ton héros combat même quand le jeu est fermé.","Un Défaut n'est pas une fin. On peut le subir, le contourner, le dompter… ou le transformer.","Les Échos partis en expédition ne combattent pas à tes côtés.","L'Autel monte lentement au début. Patience : les belles raretés viennent.","Un boss change de colère à 66 % et à 33 % de sa vie.","La brume fait rater les créatures. L'orage les foudroie.","La Descente ne pardonne pas : chaque palier ajoute une malédiction.","Ton Vrai Nom se révèle lettre par lettre.","Garde une Graine de Cauchemar pour ton prochain rang."],i=Math.floor(Math.random()*T.length),e=document.getElementById("ltip");e.textContent="Astuce du Sort : "+T[i];window.__lt=setInterval(function(){i=(i+1)%T.length;e.style.opacity=0;setTimeout(function(){e.textContent="Astuce du Sort : "+T[i];e.style.opacity=1},300)},2600)})();</script>
+</div>
+<script src="firebase-config.js"></script><script src="game.js"></script>
+
+<script>if("serviceWorker" in navigator)addEventListener("load",()=>navigator.serviceWorker.register("sw.js"));</script></body></html>
